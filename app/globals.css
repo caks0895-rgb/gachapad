@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --paper: #f3efe6;
+  --ink: #161513;
+  --sage: #5e6b5a;
+  --oxblood: #6b2e2a;
+  --rule: #d8d2c4;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body {
+  min-height: 100vh;
+}
+
+::selection {
+  background: #c9c3b4;
+  color: var(--ink);
+}
+
+.tape {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.tape-track {
+  display: inline-block;
+  animation: tape 42s linear infinite;
+}
+
+@keyframes tape {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.slip-in {
+  animation: slip 420ms ease-out;
+}
+
+@keyframes slip {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
